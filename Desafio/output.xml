@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.8.0 on darwin)" generated="20220416 19:12:41.473" rpa="false" schemaversion="3">
+<suite id="s1" name="CreatingAccount" source="/Users/henriquebonfanti/PycharmProjects/HenriqueBonfanti/Desafio/CreatingAccount.robot">
+<test id="s1-t1" name="Cenário: Validando campos obrigatórios" line="10">
+<kw name="Dado que o usuário está na página de registro" library="Tradutor" sourcename="Dado ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Que o usuário está na página de registro" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220416 19:12:41.671" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'.</msg>
+<status status="PASS" starttime="20220416 19:12:41.670" endtime="20220416 19:12:46.737"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220416 19:12:46.737" endtime="20220416 19:12:46.870"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_SIGIN}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220416 19:12:46.871" level="INFO">Clicking link 'xpath://a[@title="Log in to your customer account"]'.</msg>
+<status status="PASS" starttime="20220416 19:12:46.870" endtime="20220416 19:12:50.341"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE}</arg>
+<arg>desafioteste16@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:12:50.342" level="INFO">Typing text 'desafioteste16@teste.com' into text field '//input[@name="email_create"]'.</msg>
+<status status="PASS" starttime="20220416 19:12:50.341" endtime="20220416 19:12:50.509"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SUBMITCREATE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220416 19:12:50.510" level="INFO">Clicking button '//button[@name="SubmitCreate"]'.</msg>
+<status status="PASS" starttime="20220416 19:12:50.509" endtime="20220416 19:12:50.587"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:41.670" endtime="20220416 19:12:50.587"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:41.670" endtime="20220416 19:12:50.587"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:41.669" endtime="20220416 19:12:50.587"/>
+</kw>
+<kw name="Quando o usuário limpa o campo Email" library="Tradutor" sourcename="Quando ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="O usuário limpa o campo Email" library="Resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${FIELD_CUSTOMER_FIRSTNAME}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220416 19:12:50.588" endtime="20220416 19:12:52.267"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${FIELD_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220416 19:12:52.267" endtime="20220416 19:12:52.366"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:50.588" endtime="20220416 19:12:52.366"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:50.588" endtime="20220416 19:12:52.366"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:50.587" endtime="20220416 19:12:52.367"/>
+</kw>
+<kw name="E o usuário clica no botão Register" library="Tradutor" sourcename="E ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="O usuário clica no botão Register" library="Resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SUBMITACCOUNT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220416 19:12:52.368" level="INFO">Clicking button '//button[@name="submitAccount"]'.</msg>
+<status status="PASS" starttime="20220416 19:12:52.368" endtime="20220416 19:12:54.083"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:52.367" endtime="20220416 19:12:54.083"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:52.367" endtime="20220416 19:12:54.083"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:52.367" endtime="20220416 19:12:54.083"/>
+</kw>
+<kw name="Então o sistema deve exibir o alerta com os campos obrigatórios" library="Tradutor" sourcename="Então ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="O sistema deve exibir o alerta com os campos obrigatórios" library="Resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${ALERT_DANGER}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220416 19:12:54.085" endtime="20220416 19:12:54.109"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_PHONE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.121" level="INFO">Current page contains text 'You must register at least one phone number.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.109" endtime="20220416 19:12:54.121"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_LASTNAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.133" level="INFO">Current page contains text 'lastname is required.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.121" endtime="20220416 19:12:54.133"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_FIRSTNAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.147" level="INFO">Current page contains text 'firstname is required.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.134" endtime="20220416 19:12:54.147"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_EMAIL}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.160" level="INFO">Current page contains text 'email is required.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.148" endtime="20220416 19:12:54.161"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_PASSWD}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.172" level="INFO">Current page contains text 'passwd is required.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.161" endtime="20220416 19:12:54.172"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_ADDRESS1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.183" level="INFO">Current page contains text 'address1 is required.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.172" endtime="20220416 19:12:54.183"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_CITY}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.194" level="INFO">Current page contains text 'city is required.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.183" endtime="20220416 19:12:54.194"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_PZIPCODE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.204" level="INFO">Current page contains text 'The Zip/Postal code you've entered is invalid. It must follow this format: 00000'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.194" endtime="20220416 19:12:54.204"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_STATE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:12:54.214" level="INFO">Current page contains text 'This country requires you to choose a State.'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.204" endtime="20220416 19:12:54.214"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.085" endtime="20220416 19:12:54.215"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.084" endtime="20220416 19:12:54.215"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.084" endtime="20220416 19:12:54.215"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:41.669" endtime="20220416 19:12:54.215"/>
+</test>
+<test id="s1-t2" name="Cenário: Criando conta" line="16">
+<kw name="Dado que o usuário está na página de registro" library="Tradutor" sourcename="Dado ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Que o usuário está na página de registro" library="Resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220416 19:12:54.218" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'.</msg>
+<status status="PASS" starttime="20220416 19:12:54.217" endtime="20220416 19:12:59.612"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220416 19:12:59.613" endtime="20220416 19:12:59.745"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${LINK_SIGIN}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220416 19:12:59.746" level="INFO">Clicking link 'xpath://a[@title="Log in to your customer account"]'.</msg>
+<status status="PASS" starttime="20220416 19:12:59.745" endtime="20220416 19:13:01.901"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_CREATE}</arg>
+<arg>desafioteste16@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:01.902" level="INFO">Typing text 'desafioteste16@teste.com' into text field '//input[@name="email_create"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:01.901" endtime="20220416 19:13:02.044"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SUBMITCREATE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:02.045" level="INFO">Clicking button '//button[@name="SubmitCreate"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:02.045" endtime="20220416 19:13:02.131"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.217" endtime="20220416 19:13:02.131"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.216" endtime="20220416 19:13:02.131"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.216" endtime="20220416 19:13:02.131"/>
+</kw>
+<kw name="Quando o usuário preenche todos os campos obrigatórios" library="Tradutor" sourcename="Quando ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="O usuário preenche todos os campos obrigatórios" library="Resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${FIELD_CUSTOMER_FIRSTNAME}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220416 19:13:02.132" endtime="20220416 19:13:04.031"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_CUSTOMER_FIRSTNAME}</arg>
+<arg>Nome usuário</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.032" level="INFO">Typing text 'Nome usuário' into text field '//input[@name="customer_firstname"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.032" endtime="20220416 19:13:04.160"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_CUSTOMER_LASTNAME}</arg>
+<arg>Sobrenome usuário</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.160" level="INFO">Typing text 'Sobrenome usuário' into text field '//input[@name="customer_lastname"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.160" endtime="20220416 19:13:04.257"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_PASSWD}</arg>
+<arg>senha</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.258" level="INFO">Typing text 'senha' into text field '//input[@name="passwd"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.257" endtime="20220416 19:13:04.340"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_ADDRESS1}</arg>
+<arg>Endereco</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.341" level="INFO">Typing text 'Endereco' into text field '//input[@name="address1"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.340" endtime="20220416 19:13:04.450"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_CITY}</arg>
+<arg>Criciuma</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.451" level="INFO">Typing text 'Criciuma' into text field '//input[@name="city"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.450" endtime="20220416 19:13:04.608"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${FIELD_ID_STATE}</arg>
+<arg>California</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220416 19:13:04.609" level="INFO">Selecting options from selection list '//select[@name="id_state"]' by label California.</msg>
+<status status="PASS" starttime="20220416 19:13:04.608" endtime="20220416 19:13:04.694"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_POSTCODE}</arg>
+<arg>88888</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.695" level="INFO">Typing text '88888' into text field '//input[@name="postcode"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.694" endtime="20220416 19:13:04.809"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIELD_PHONE}</arg>
+<arg>999999999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.810" level="INFO">Typing text '999999999' into text field '//input[@name="phone"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.810" endtime="20220416 19:13:04.890"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:02.132" endtime="20220416 19:13:04.890"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:02.132" endtime="20220416 19:13:04.890"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:02.131" endtime="20220416 19:13:04.890"/>
+</kw>
+<kw name="E o usuário clica no botão Register" library="Tradutor" sourcename="E ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="O usuário clica no botão Register" library="Resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BUTTON_SUBMITACCOUNT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220416 19:13:04.892" level="INFO">Clicking button '//button[@name="submitAccount"]'.</msg>
+<status status="PASS" starttime="20220416 19:13:04.892" endtime="20220416 19:13:07.418"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:04.891" endtime="20220416 19:13:07.418"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:04.891" endtime="20220416 19:13:07.418"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:04.890" endtime="20220416 19:13:07.419"/>
+</kw>
+<kw name="Então o sistema deve mostrar a tela de My Account" library="Tradutor" sourcename="Então ${keyword}">
+<kw name="Run Keyword" library="BuiltIn">
+<arg>${keyword}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="O sistema deve mostrar a tela de My Account" library="Resource">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${MYACCOUNT_VERIFY}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220416 19:13:07.420" endtime="20220416 19:13:07.431"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${MYACCOUNT_TEXT}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220416 19:13:07.442" level="INFO">Current page contains text 'Welcome to your account. Here you can manage all of your personal information and orders.'.</msg>
+<status status="PASS" starttime="20220416 19:13:07.431" endtime="20220416 19:13:07.443"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:07.420" endtime="20220416 19:13:07.443"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:07.419" endtime="20220416 19:13:07.443"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:07.419" endtime="20220416 19:13:07.443"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:54.216" endtime="20220416 19:13:07.443"/>
+</test>
+<kw name="Fechar página" library="Resource" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220416 19:13:07.445" endtime="20220416 19:13:07.676"/>
+</kw>
+<status status="PASS" starttime="20220416 19:13:07.444" endtime="20220416 19:13:07.677"/>
+</kw>
+<status status="PASS" starttime="20220416 19:12:41.475" endtime="20220416 19:13:07.677"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="CreatingAccount">CreatingAccount</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
